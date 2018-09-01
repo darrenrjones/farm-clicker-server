@@ -1,0 +1,20 @@
+[
+  {
+    "type": "wheat",
+    "currentAmount": 10,
+    "price": 1,
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "corn",
+    "currentAmount": 5,
+    "price": 2,
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "soy",
+    "currentAmount": 2,
+    "price": 2,
+    "user" : "5b4d0890a6b4fb75280719a9"
+  }
+]

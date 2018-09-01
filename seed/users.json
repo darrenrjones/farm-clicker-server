@@ -1,0 +1,17 @@
+[
+  {
+    "username": "farmDummy",
+    "password": "password",
+    "farmname": "farmDummy's Farm"
+  },
+  {
+    "username": "farmSmartie",
+    "password": "password",
+    "farmname": "farmSmartie's Farm"
+  },
+  {
+    "username": "farmGod",
+    "password": "password",
+    "farmname": "farmGod's Farm"
+  }
+]
