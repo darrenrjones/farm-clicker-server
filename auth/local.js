@@ -2,7 +2,7 @@
 
 const { Strategy: LocalStrategy } = require('passport-local');
 
-const User = require('../models');
+const User = require('../models/user');
 
 const localStrategy = new LocalStrategy((username, password, done) => {  
   let user;
@@ -34,11 +34,7 @@ const localStrategy = new LocalStrategy((username, password, done) => {
       return done(null, user, { success: true });
     })
     .catch(err => { 
-      // console.log('entered catch from local');
-           
       if (err.reason === 'LoginError') {
-        // console.log('entered localStrategy err: ', err);
-        
         return done(null, false, { success: false, message: err.message });
       }
       return done(err);

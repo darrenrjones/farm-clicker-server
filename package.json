@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --exec npm run mocha-exit0"
+    "start": "nodemon index.js",
+    "test": "nodemon --exec npm run mocha-exit0",
+    "mocha": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js'",
+    "mocha-exit0": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js' || true"
   },
   "author": "DarrenRaymondJones.com",
   "license": "MIT",
