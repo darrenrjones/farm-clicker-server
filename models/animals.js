@@ -18,4 +18,4 @@ animalsSchema.set('toObject', {
   }
 });
 
-module.exports = mongoose.model('Animal', animalsSchema);
+module.exports = mongoose.model('Animals', animalsSchema, 'Animals');

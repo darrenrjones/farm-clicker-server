@@ -17,4 +17,4 @@ cropsSchema.set('toObject', {
   }
 });
 
-module.exports = mongoose.model('Crop', cropsSchema);
+module.exports = mongoose.model('Crops', cropsSchema, 'Crops');
