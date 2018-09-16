@@ -15,6 +15,7 @@ const { dbConnect } = require('./db-mongoose');
 
 // ROUTERS
 const authRouter = require('./routes/auth');
+const userRouter = require('./routes/user');
 const cropsRouter = require('./routes/crops');
 
 // Express app
@@ -43,6 +44,7 @@ passport.use(jwtStrategy);
 
 // Endpoints
 app.use('/api', authRouter);
+app.use('/api/user', userRouter);
 app.use('/api/crops', cropsRouter);
 
 

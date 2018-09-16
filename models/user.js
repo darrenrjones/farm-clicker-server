@@ -6,20 +6,23 @@ const bcrypt = require('bcryptjs');
 const userSchema = mongoose.Schema({
   farmname: { type: String, required: true },
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  cash: Number,
+  password: { type: String, required: true },
+  crops: [{type: mongoose.Schema.ObjectId, ref: 'Crops', required: true}]
+
 });
 
-userSchema.virtual('userCrops', {
-  ref: 'Crops',
-  localField: '_id',
-  foreignField: 'user'
-});
+// userSchema.virtual('userCrops', {
+//   ref: 'Crops',
+//   localField: '_id',
+//   foreignField: 'user'
+// });
 
-userSchema.virtual('userAnimals', {
-  ref: 'Animals',
-  localField: '_id',
-  foreignField: 'user'
-});
+// userSchema.virtual('userAnimals', {
+//   ref: 'Animals',
+//   localField: '_id',
+//   foreignField: 'user'
+// });
 
 userSchema.set('toObject', {
   transform: function (doc, ret) {

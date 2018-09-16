@@ -3,8 +3,9 @@
 const mongoose = require ('mongoose');
 
 const cropsSchema = mongoose.Schema({
-  type: String,
-  currentAmount: Number,
+  type: {type:String, unique:false},
+  count: Number,
+  total: Number,
   price: Number,
   user: {type: mongoose.Schema.ObjectId, ref: 'User', required: true}
 });
@@ -17,4 +18,4 @@ cropsSchema.set('toObject', {
   }
 });
 
-module.exports = mongoose.model('Crops', cropsSchema, 'Crops');
+module.exports = mongoose.model('Crops', cropsSchema,'Crops');
