@@ -2,25 +2,12 @@
 
 const { Strategy: LocalStrategy } = require('passport-local');
 
-const User = require('../models/parent');
+const User = require('../models/user');
 
 const localStrategy = new LocalStrategy((username, password, done) => {
   let user;
   User.find({ username })
-    .populate({
-      path: 'child', 
-      model: 'Child', 
-      populate: [
-        {
-          path: 'tasks',
-          model: 'Tasks'
-        },        
-        {
-          path: 'rewards',
-          model: 'Rewards'
-        }        
-      ],      
-    })
+    .populate('crops')
     .then(results => {
       user = results[0];
       if (!user) {
@@ -45,7 +32,7 @@ const localStrategy = new LocalStrategy((username, password, done) => {
     })
     .catch(err => {
       if (err.reason === 'LoginError') {
-        return done(null, false);
+        return done(null, false, { success: false, message: err.message });
       }
       return done(err);
     });

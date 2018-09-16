@@ -7,7 +7,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const passport = require('passport');
 
-const localStrategy = require('./auth/local');
+const localStrategy = require('./auth/localWithPopulate');
 const jwtStrategy = require('./auth/jwt');
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
