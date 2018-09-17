@@ -3,7 +3,7 @@
 const mongoose = require ('mongoose');
 
 const cropsSchema = mongoose.Schema({
-  type: {type:String, unique:false},
+  type: String,
   count: Number,
   total: Number,
   price: Number,

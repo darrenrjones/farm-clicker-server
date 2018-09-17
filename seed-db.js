@@ -59,27 +59,27 @@ mongoose.connect(DATABASE_URL)
       // Animals.createIndexes(),
     ]);
   })
-  .then(() => {
-    return Crops.find({user:userIds[0]})
-      .then(result => {
-        crop1Ids = result.map(crop => crop.id);
-      });
-  })
-  .then(() => {
-    return Crops.find({user:userIds[1]})
-      .then(result => {
-        crop2Ids = result.map(crop => crop.id);
-      });
-  })
-  .then(() => {
-    return Crops.find({user:userIds[2]})
-      .then(result => {
-        crop3Ids = result.map(crop => crop.id);
-      });
-  })
-  .then(() => User.findOneAndUpdate({_id:userIds[0], crops: crop1Ids}))
-  .then(() => User.findOneAndUpdate({_id:userIds[1], crops: crop2Ids}))
-  .then(() => User.findOneAndUpdate({_id:userIds[2], crops: crop3Ids}))
+  // .then(() => {
+  //   return Crops.find({user:userIds[0]})
+  //     .then(result => {
+  //       crop1Ids = result.map(crop => crop.id);
+  //     });
+  // })
+  // .then(() => {
+  //   return Crops.find({user:userIds[1]})
+  //     .then(result => {
+  //       crop2Ids = result.map(crop => crop.id);
+  //     });
+  // })
+  // .then(() => {
+  //   return Crops.find({user:userIds[2]})
+  //     .then(result => {
+  //       crop3Ids = result.map(crop => crop.id);
+  //     });
+  // })
+  // .then(() => User.findOneAndUpdate({_id:userIds[0], crops: crop1Ids}))
+  // .then(() => User.findOneAndUpdate({_id:userIds[1], crops: crop2Ids}))
+  // .then(() => User.findOneAndUpdate({_id:userIds[2], crops: crop3Ids}))
 
   .then(() => mongoose.disconnect())
   .catch(err => {

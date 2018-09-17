@@ -11,7 +11,11 @@ const tooBigOrTooSmall = require('../helper/tooBigOrTooSmall');
 
 router.get('/:id', (req,res,next) => {
   User.find({_id: req.params.id})
-    .populate('crops')
+  // User.findOne()
+    .populate({
+      path: 'crops',
+      model: 'Crops'
+    })
     .then(result => {
       res.json(result);
     })

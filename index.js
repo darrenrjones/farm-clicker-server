@@ -8,6 +8,8 @@ const morgan = require('morgan');
 const passport = require('passport');
 
 const localStrategy = require('./auth/localWithPopulate');
+// const localStrategy = require('./auth/local');
+
 const jwtStrategy = require('./auth/jwt');
 
 const { PORT, CLIENT_ORIGIN } = require('./config');

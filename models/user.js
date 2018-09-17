@@ -8,15 +8,24 @@ const userSchema = mongoose.Schema({
   username: { type: String, required: true, unique: true },
   cash: Number,
   password: { type: String, required: true },
-  crops: [{type: mongoose.Schema.ObjectId, ref: 'Crops', required: true}]
-
+},
+{
+  'toJSON':{ virtuals: true },
+  'toObject':{ virtuals: true, 
+    transform: function (doc, ret) {
+      ret.id = ret._id;
+      delete ret._id;
+      delete ret.__v;
+      delete ret.password;
+    }
+   }
 });
 
-// userSchema.virtual('userCrops', {
-//   ref: 'Crops',
-//   localField: '_id',
-//   foreignField: 'user'
-// });
+userSchema.virtual('crops', {
+  ref: 'Crops',
+  localField: '_id',
+  foreignField: 'user'
+});
 
 // userSchema.virtual('userAnimals', {
 //   ref: 'Animals',
