@@ -2,63 +2,63 @@
   {
     "type": "wheat1",
     "count": 2,
-    "total": 1,
+    "total": 0,
     "price": 1,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "wheat2",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 1,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "wheat3",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 1,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "corn1",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 2,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "corn2",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 2,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "corn3",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 2,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "soy1",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 2,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "soy2",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 2,
     "user" : "5b4d0890a6b4fb75280719a9"
   },
   {
     "type": "soy3",
     "count": 0,
-    "total": 1,
+    "total": 0,
     "price": 2,
     "user" : "5b4d0890a6b4fb75280719a9"
   }

@@ -3,26 +3,15 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user');
+const Crops = require('../models/crops');
 
 const missingField = require('../helper/missingFields');
 const nonStringField = require('../helper/nonStringFields');
 const trimmedFields = require('../helper/trimmedFields');
 const tooBigOrTooSmall = require('../helper/tooBigOrTooSmall');
 
-router.get('/:id', (req,res,next) => {
-  User.find({_id: req.params.id})
-  // User.findOne()
-    .populate({
-      path: 'crops',
-      model: 'Crops'
-    })
-    .then(result => {
-      res.json(result);
-    })
-    .catch(err => {
-      next(err);
-    })
-});
+const passport = require('passport');
+
 
 router.post('/register', (req, res, next) => {
 
@@ -33,7 +22,9 @@ router.post('/register', (req, res, next) => {
   tooBigOrTooSmall(req);
 
   const { username, farmname, password } = req.body;
-
+  // const UserCropsDefault = require('./seed/crops1');
+  // console.log('crops default: ',UserCropsDefault);
+  
   return User.hashPassword(password)
     .then(digest => {
       const newUser = {
@@ -57,5 +48,45 @@ router.post('/register', (req, res, next) => {
       next(err);
     });
 });
+
+const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: true });
+
+//get full user with populated crops
+router.get('/:id', jwtAuth, (req,res,next) => {
+  const { id } = req.params;
+  User.find({id})
+    .populate('crops')
+    // .populate('animals')
+    .then(result => {
+      res.json(result);
+    })
+    .catch(err => {
+      next(err);
+    })
+});
+
+//save
+router.put('/save/:id', jwtAuth, (req, res, next) => {
+  const { id } = req.params;
+  const newCrops = req.body;
+
+  const updatePromises = newCrops.map(newCrop => {
+    return Crops.findByIdAndUpdate({user:newCrop.user}, {$set: {count:newCrop.count, total: newCrop.total, price:newCrop.price}})
+  });
+
+  Promise.all(updatePromises)
+    .then(results => {
+      console.log(newCrops[0].id);
+      
+      res.json(results);
+    })
+    .catch(err => {
+      console.error(err.message);
+    })
+
+ 
+});
+
+
 
 module.exports = router;
