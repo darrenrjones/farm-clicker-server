@@ -7,6 +7,7 @@ const User = require('../models/user');
 const localStrategy = new LocalStrategy((username, password, done) => {
   let user;
   User.find({ username })
+    // .exclude('password')
     .populate('crops')
     .then(results => {
       user = results[0];

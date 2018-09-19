@@ -52,18 +52,18 @@ router.post('/register', (req, res, next) => {
 const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: true });
 
 //get full user with populated crops
-router.get('/:id', jwtAuth, (req,res,next) => {
-  const { id } = req.params;
-  User.find({id})
-    .populate('crops')
-    // .populate('animals')
-    .then(result => {
-      res.json(result);
-    })
-    .catch(err => {
-      next(err);
-    })
-});
+// router.get('/:id', jwtAuth, (req,res,next) => {
+//   const { id } = req.params;
+//   User.find({id})
+//     .populate('crops')
+//     // .populate('animals')
+//     .then(result => {
+//       res.json(result);
+//     })
+//     .catch(err => {
+//       next(err);
+//     })
+// });
 
 //save
 router.put('/save/:id', jwtAuth, (req, res, next) => {
@@ -71,20 +71,16 @@ router.put('/save/:id', jwtAuth, (req, res, next) => {
   const newCrops = req.body;
 
   const updatePromises = newCrops.map(newCrop => {
-    return Crops.findByIdAndUpdate({user:newCrop.user}, {$set: {count:newCrop.count, total: newCrop.total, price:newCrop.price}})
+    return Crops.findByIdAndUpdate(newCrop.id, {$set: {count:newCrop.count, total: newCrop.total, price:newCrop.price}})
   });
 
   Promise.all(updatePromises)
     .then(results => {
-      console.log(newCrops[0].id);
-      
       res.json(results);
     })
     .catch(err => {
       console.error(err.message);
     })
-
- 
 });
 
 
