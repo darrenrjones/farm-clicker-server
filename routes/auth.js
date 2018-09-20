@@ -39,6 +39,7 @@ const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: tr
 router.post('/refresh', jwtAuth, (req, res) => {
   User.findById(req.user.id)
     .populate('crops')
+    .populate('animals')
     .then(user => {
       const authToken = createAuthToken(user);
       return res.json({authToken})

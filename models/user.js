@@ -20,22 +20,22 @@ userSchema.virtual('crops', {
   foreignField: 'user'
 });
 
-userSchema.set('toObject', {getters: true});
+// userSchema.set('toObject', {getters: true});
 
-// userSchema.virtual('userAnimals', {
-//   ref: 'Animals',
-//   localField: '_id',
-//   foreignField: 'user'
-// });
+userSchema.virtual('animals', {
+  ref: 'Animals',
+  localField: '_id',
+  foreignField: 'user'
+});
 
-// userSchema.set('toObject', {
-//   transform: function (doc, ret) {
-//     ret.id = ret._id;
-//     delete ret._id;
-//     delete ret.__v;
-//     delete ret.password;
-//   }
-// });
+userSchema.set('toObject', {
+  transform: function (doc, ret) {
+    ret.id = ret._id;
+    delete ret._id;
+    delete ret.__v;
+    delete ret.password;
+  }
+});
 
 userSchema.methods.validatePassword = function (password) {
   return bcrypt.compare(password, this.password);

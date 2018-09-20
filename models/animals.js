@@ -4,9 +4,10 @@ const mongoose = require ('mongoose');
 
 const animalsSchema = mongoose.Schema({
   type: String,
-  currentAmount: Number,
-  price: Number,
-  feedCombo: String,
+  count: Number,
+  total: Number,
+  price: Number,  
+  feed: String,
   user: {type: mongoose.Schema.ObjectId, ref: 'User', required: true}
 });
 

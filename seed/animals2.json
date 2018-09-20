@@ -1,0 +1,58 @@
+[
+  {
+    "type": "chicken1",
+    "count": 5,
+    "total": 5,
+    "price": 5,
+    "feed": "wheat, corn",
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "chicken2",
+    "count": 0,
+    "total": 0,
+    "price": 5,
+    "feed": "wheat, corn",
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "chicken3",
+    "count": 0,
+    "total": 0,
+    "price": 5,
+    "feed": "wheat, corn",
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "pig1",
+    "count": 0,
+    "total": 0,
+    "price": 20,
+    "feed": "corn, soy",
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "pig2",
+    "count": 0,
+    "total": 0,
+    "price": 20,
+    "feed": "corn, soy",
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "cow1",
+    "count": 0,
+    "total": 0,
+    "price": 25,
+    "feed": "wheat, corn, soy",
+    "user" : "5b4d0890a6b4fb75280719a9"
+  },
+  {
+    "type": "cow2",
+    "count": 0,
+    "total": 0,
+    "price": 25,
+    "feed": "wheat, corn, soy",
+    "user" : "5b4d0890a6b4fb75280719a9"
+  }
+]

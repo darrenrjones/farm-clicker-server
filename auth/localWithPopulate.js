@@ -8,7 +8,17 @@ const localStrategy = new LocalStrategy((username, password, done) => {
   let user;
   User.find({ username })
     // .exclude('password')
-    .populate('crops')
+    // .populate('crops')
+    // .populate('animals')
+    .populate([{
+      path: 'crops',
+      model: 'Crops'
+    },
+    {
+      path: 'animals',
+      model: 'Animals'
+    }
+    ])   
     .then(results => {
       user = results[0];
       if (!user) {

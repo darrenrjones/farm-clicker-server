@@ -9,6 +9,7 @@ router.use('/', passport.authenticate('jwt', { session: false, failWithError: tr
 
 //get user crops
 router.get('/', (req,res,next) => {
+  console.log('get user crops entered from routes/crops.js')
 const user = req.user.id;
 
   Crops.find({user})
@@ -17,32 +18,27 @@ const user = req.user.id;
     });
 });
 
-//get single crop
-
 //purchase crop
-router.post('/', (req,res,next) => {
-  const user = req.user.id;
-  const { type, currentAmount, price } = req.body;
-  const newCrop = { type, currentAmount, price, user };
+// router.post('/', (req,res,next) => {
+//   const user = req.user.id;
+//   const { type, currentAmount, price } = req.body;
+//   const newCrop = { type, currentAmount, price, user };
 
-  if(!type || !currentAmount || !price){
-    const err = new Error('something happened with client... missing part of req.body');
-    err.status = 400;
-    return next(err);
-  }
+//   if(!type || !currentAmount || !price){
+//     const err = new Error('something happened with client... missing part of req.body');
+//     err.status = 400;
+//     return next(err);
+//   }
 
-  Crops.create(newCrop)
-    .then(result => {
-      res.location(`${req.originalUrl}`)
-        .status(201)
-        .json(result);
-    })
-    .catch(err => {
-      next(err);
-    });
-});
-
-// increment currentAmount due to purchasing
-
+//   Crops.create(newCrop)
+//     .then(result => {
+//       res.location(`${req.originalUrl}`)
+//         .status(201)
+//         .json(result);
+//     })
+//     .catch(err => {
+//       next(err);
+//     });
+// });
 
 module.exports = router;

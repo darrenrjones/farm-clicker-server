@@ -6,20 +6,19 @@ const { DATABASE_URL } = require('./config');
 
 const User = require('./models/user');
 const Crops = require('./models/crops');
-// const Animals = require('./models/animals');
+const Animals = require('./models/animals');
 
 const seedUser = require('./seed/users');
+
 const seedCrops1 = require('./seed/crops1');
 const seedCrops2 = require('./seed/crops2');
 const seedCrops3 = require('./seed/crops3');
 
-// const seedAnimals = require('./seed/animals');
+const seedAnimals1 = require('./seed/animals1');
+const seedAnimals2 = require('./seed/animals2');
+const seedAnimals3 = require('./seed/animals3');
 
 let userIds = [];
-let crop1Ids = [];
-let crop2Ids = [];
-let crop3Ids = [];
-
 
 mongoose.connect(DATABASE_URL)
   .then(() => {
@@ -40,13 +39,18 @@ mongoose.connect(DATABASE_URL)
   })
   .then(([User]) => {    
     User.forEach((user, i) => userIds.push(user.id)); // push all UserId's to UserId's array for access
-    // seedAnimals.forEach((animal,i) => animal.user = userIds[i]);
 
     seedCrops1.forEach((crop) => crop.user = userIds[0]);
     
     seedCrops2.forEach((crop) => crop.user = userIds[1]);
 
     seedCrops3.forEach((crop) => crop.user = userIds[2]);
+
+    seedAnimals1.forEach((animal) => animal.user = userIds[0]);
+    
+    seedAnimals2.forEach((animal) => animal.user = userIds[1]);
+
+    seedAnimals3.forEach((animal) => animal.user = userIds[2]);
 
     return Promise.all([
       Crops.insertMany(seedCrops1),
@@ -55,8 +59,12 @@ mongoose.connect(DATABASE_URL)
       Crops.createIndexes(),
       Crops.insertMany(seedCrops3),
       Crops.createIndexes(),
-      // Animals.insertMany(seedAnimals),
-      // Animals.createIndexes(),
+      Animals.insertMany(seedAnimals1),
+      Animals.createIndexes(),
+      Animals.insertMany(seedAnimals2),
+      Animals.createIndexes(),
+      Animals.insertMany(seedAnimals3),
+      Animals.createIndexes(),
     ]);
   })
   // .then(() => {

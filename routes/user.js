@@ -22,8 +22,6 @@ router.post('/register', (req, res, next) => {
   tooBigOrTooSmall(req);
 
   const { username, farmname, password } = req.body;
-  // const UserCropsDefault = require('./seed/crops1');
-  // console.log('crops default: ',UserCropsDefault);
   
   return User.hashPassword(password)
     .then(digest => {
