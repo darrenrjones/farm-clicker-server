@@ -37,8 +37,12 @@ router.post('/login', localAuth, (req, res) => {
 const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: true });
 
 router.post('/refresh', jwtAuth, (req, res) => {
-  const authToken = createAuthToken(req.user);
-  return res.json({ authToken });
+  User.findById(req.user.id)
+    .populate('crops')
+    .then(user => {
+      const authToken = createAuthToken(user);
+      return res.json({authToken})
+    })
 });
 
 module.exports = router;
