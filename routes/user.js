@@ -22,6 +22,9 @@ router.post('/register', (req, res, next) => {
   trimmedFields(['username', 'password'],req);
   tooBigOrTooSmall(req);
 
+  let userId;
+  const seedCrops1 = require('../seed/crops1');
+  const seedAnimals1 = require('../seed/animals1');
   const { username, farmname, password } = req.body;
   
   return User.hashPassword(password)
@@ -34,10 +37,21 @@ router.post('/register', (req, res, next) => {
       return User.create(newUser)
     })
     .then(result => {
+      userId = result.id
       return res.status(201)
-        .location(`/api/users/${result.id}`)
+        .location(`/api/users/${userId}`)
         .json(result);
     })
+    .then(() => {
+      seedCrops1.forEach((crop) => crop.user = userId);
+      seedAnimals1.forEach((animal) => animal.user = userId);
+      return Promise.all([
+        Crops.insertMany(seedCrops1),
+        Crops.createIndexes(),
+        Animals.insertMany(seedAnimals1),
+        Animals.createIndexes(),
+      ]);
+    }) 
     .catch(err => {
       if(err.code === 11000) {
         err = new Error('The username already exists');
