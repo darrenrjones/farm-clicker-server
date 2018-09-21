@@ -4,6 +4,7 @@ const router = express.Router();
 
 const User = require('../models/user');
 const Crops = require('../models/crops');
+const Animals = require('../models/animals');
 
 const missingField = require('../helper/missingFields');
 const nonStringField = require('../helper/nonStringFields');
@@ -63,16 +64,18 @@ const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: tr
 //     })
 // });
 
-//save
 router.put('/save/:id', jwtAuth, (req, res, next) => {
-  const { id } = req.params;
-  const newCrops = req.body;
+  const user = req.body;
 
-  const updatePromises = newCrops.map(newCrop => {
+  const cropUpdatePromises = user.crops.map(newCrop => {
     return Crops.findByIdAndUpdate(newCrop.id, {$set: {count:newCrop.count, total: newCrop.total, price:newCrop.price}})
   });
 
-  Promise.all(updatePromises)
+  const animalUpdatePromises = user.animals.map(newAnimal => {
+    return Animals.findByIdAndUpdate(newAnimal.id, {$set: {count:newAnimal.count, total: newAnimal.total, price:newAnimal.price}})
+  });
+  
+  Promise.all(cropUpdatePromises.concat(animalUpdatePromises))
     .then(results => {
       res.json(results);
     })

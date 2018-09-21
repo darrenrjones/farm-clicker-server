@@ -20,8 +20,6 @@ userSchema.virtual('crops', {
   foreignField: 'user'
 });
 
-// userSchema.set('toObject', {getters: true});
-
 userSchema.virtual('animals', {
   ref: 'Animals',
   localField: '_id',
