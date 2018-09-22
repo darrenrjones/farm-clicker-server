@@ -8,6 +8,11 @@ const userSchema = mongoose.Schema({
   username: { type: String, required: true, unique: true },
   cash: Number,
   password: { type: String, required: true },
+  cropTotals: {
+    wheat: {type: Number, default: 0},
+    corn: {type: Number, default: 0},
+    soy: {type: Number, default: 0}
+  }
 },
 {
   'toJSON':{ virtuals: true },
