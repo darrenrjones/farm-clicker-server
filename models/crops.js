@@ -5,7 +5,6 @@ const mongoose = require ('mongoose');
 const cropsSchema = mongoose.Schema({
   type: String,
   count: Number,
-  total: Number,
   price: Number,
   user: {type: mongoose.Schema.ObjectId, ref: 'User', required: true}
 });

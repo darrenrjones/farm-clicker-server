@@ -82,14 +82,13 @@ router.put('/save/:id', jwtAuth, (req, res, next) => {
   const user = req.body;
 
   const cropUpdatePromises = user.crops.map(newCrop => {
-    return Crops.findByIdAndUpdate(newCrop.id, {$set: {count:newCrop.count, total: newCrop.total, price:newCrop.price}})
+    return Crops.findByIdAndUpdate(newCrop.id, {$set: {count:newCrop.count, price:newCrop.price}})
   });
-
   const animalUpdatePromises = user.animals.map(newAnimal => {
-    return Animals.findByIdAndUpdate(newAnimal.id, {$set: {count:newAnimal.count, total: newAnimal.total, price:newAnimal.price}})
+    return Animals.findByIdAndUpdate(newAnimal.id, {$set: {count:newAnimal.count, price:newAnimal.price}})
   });
-
-  User.findByIdAndUpdate(user.id, {$set: {cash: user.cash}})
+  
+  User.findByIdAndUpdate(user.id, {$set: {cash: user.cash, cropTotals: user.cropTotals }})
     .then((results => {
       res.json(results);
     }))
