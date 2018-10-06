@@ -15,7 +15,10 @@ const userSchema = mongoose.Schema({
   }
 },
 {
-  'toJSON':{ virtuals: true },
+  'toJSON':{ 
+    virtuals: true,
+    transform: (doc, ret) => Object.assign(ret, { password: null }) // <-- hide password from JSON.stringify() output
+  },
   'toObject':{ virtuals: true}
 });
 

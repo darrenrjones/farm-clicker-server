@@ -89,7 +89,7 @@ router.put('/save/:id', jwtAuth, (req, res, next) => {
     return Animals.findByIdAndUpdate(newAnimal.id, {$set: {count:newAnimal.count, total: newAnimal.total, price:newAnimal.price}})
   });
 
-  User.findByIdAndUpdate(user.id, {$set: {cash: user.cash}})
+  User.findByIdAndUpdate(user.id, {$set: {cash: user.cash, cropTotals: user.cropTotals}})
     .then((results => {
       res.json(results);
     }))
