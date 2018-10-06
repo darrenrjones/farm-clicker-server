@@ -2,64 +2,64 @@
   {
     "type": "wheat1",
     "count": 2,
-    "total": 2,
     "price": 1,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "wheat2",
     "count": 0,
-    "total": 0,
     "price": 1,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "wheat3",
     "count": 0,
-    "total": 0,
     "price": 1,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "corn1",
     "count": 0,
-    "total": 0,
     "price": 2,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "corn2",
     "count": 0,
-    "total": 0,
     "price": 2,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "corn3",
     "count": 0,
-    "total": 0,
     "price": 2,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "soy1",
     "count": 0,
-    "total": 0,
     "price": 2,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "soy2",
     "count": 0,
-    "total": 0,
     "price": 2,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "soy3",
     "count": 0,
-    "total": 0,
     "price": 2,
-    "user" : "5b4d0890a6b4fb75280719a9"
+    "user" : "5b4d0890a6b4fb75280719a9",
+    "manager": false
   }
 ]

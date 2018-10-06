@@ -5,10 +5,10 @@ const mongoose = require ('mongoose');
 const animalsSchema = mongoose.Schema({
   type: String,
   count: Number,
-  total: Number,
   price: Number,  
   feed: String,
-  user: {type: mongoose.Schema.ObjectId, ref: 'User', required: true}
+  user: {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
+  manager: Boolean
 });
 
 animalsSchema.set('toObject', {
