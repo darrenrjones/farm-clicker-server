@@ -1,16 +1,16 @@
 [
   {
     "type": "chicken1",
-    "count": 10,
-    "price": 5,
+    "count": 3,
+    "price": 15,
     "feed": "wheat",
     "user" : "5b4d0890a6b4fb75280719a9",
-    "manager": false
+    "manager": true
   },
   {
     "type": "chicken2",
     "count": 0,
-    "price": 5,
+    "price": 15,
     "feed": "wheat",
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
@@ -18,7 +18,7 @@
   {
     "type": "chicken3",
     "count": 0,
-    "price": 5,
+    "price": 15,
     "feed": "wheat",
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
@@ -26,7 +26,7 @@
   {
     "type": "cow1",
     "count": 0,
-    "price": 100,
+    "price": 50,
     "feed": "wheat, corn",
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
@@ -34,7 +34,7 @@
   {
     "type": "cow2",
     "count": 0,
-    "price": 100,
+    "price": 50,
     "feed": "wheat, corn",
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
@@ -42,7 +42,7 @@
   {
     "type": "pig1",
     "count": 0,
-    "price": 50,
+    "price": 25,
     "feed": "corn, soy",
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
@@ -50,7 +50,7 @@
   {
     "type": "pig2",
     "count": 0,
-    "price": 50,
+    "price": 25,
     "feed": "corn, soy",
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
