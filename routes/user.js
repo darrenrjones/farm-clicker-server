@@ -64,29 +64,15 @@ router.post('/register', (req, res, next) => {
 
 const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: true });
 
-//get full user with populated crops
-// router.get('/:id', jwtAuth, (req,res,next) => {
-//   const { id } = req.params;
-//   User.find({id})
-//     .populate('crops')
-//     // .populate('animals')
-//     .then(result => {
-//       res.json(result);
-//     })
-//     .catch(err => {
-//       next(err);
-//     })
-// });
-
 router.put('/save/:id', jwtAuth, (req, res, next) => {
   const user = req.body;
 
   const cropUpdatePromises = user.crops.map(newCrop => {
-    return Crops.findByIdAndUpdate(newCrop.id, {$set: {count:newCrop.count, total: newCrop.total, price:newCrop.price}})
+    return Crops.findByIdAndUpdate(newCrop.id, {$set: {count:newCrop.count, price:newCrop.price, manager:newCrop.manager}})
   });
 
   const animalUpdatePromises = user.animals.map(newAnimal => {
-    return Animals.findByIdAndUpdate(newAnimal.id, {$set: {count:newAnimal.count, total: newAnimal.total, price:newAnimal.price}})
+    return Animals.findByIdAndUpdate(newAnimal.id, {$set: {count:newAnimal.count, price:newAnimal.price, manager:newAnimal.manager}})
   });
 
   User.findByIdAndUpdate(user.id, {$set: {cash: user.cash, cropTotals: user.cropTotals}})
