@@ -3,14 +3,14 @@
     "username": "farmDummy",
     "password": "password",
     "farmname": "farmDummy's Farm",
-    "cash": 0,
+    "cash": 1000,
     "crops": []
   },
   {
     "username": "farmSmartie",
     "password": "password",
     "farmname": "farmSmartie's Farm",
-    "cash": 10,
+    "cash": 150,
     "crops": []
   },
   {
