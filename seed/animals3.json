@@ -1,58 +1,106 @@
 [
   {
     "type": "chicken1",
-    "count": 3,
+    "count": 9,
     "price": 5,
     "feed": "wheat",
-    "user" : "5b4d0890a6b4fb75280719a9",
-    "manager": true
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
   },
   {
     "type": "chicken2",
-    "count": 0,
+    "count": 9,
     "price": 5,
     "feed": "wheat",
-    "user" : "5b4d0890a6b4fb75280719a9",
+    "user": "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "chicken3",
-    "count": 0,
+    "count": 9,
     "price": 5,
     "feed": "wheat",
-    "user" : "5b4d0890a6b4fb75280719a9",
-    "manager": false
-  },
-  {
-    "type": "cow1",
-    "count": 0,
-    "price": 40,
-    "feed": "wheat, corn",
-    "user" : "5b4d0890a6b4fb75280719a9",
-    "manager": false
-  },
-  {
-    "type": "cow2",
-    "count": 0,
-    "price": 40,
-    "feed": "wheat, corn",
-    "user" : "5b4d0890a6b4fb75280719a9",
+    "user": "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "pig1",
-    "count": 0,
+    "count": 9,
     "price": 20,
-    "feed": "corn, soy",
-    "user" : "5b4d0890a6b4fb75280719a9",
+    "feed": "wheat, corn",
+    "user": "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "pig2",
-    "count": 0,
+    "count": 9,
     "price": 20,
+    "feed":"wheat, corn",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "pig3",
+    "count": 5,
+    "price": 20,
+    "feed":"wheat, corn",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "sheep1",
+    "count": 5,
+    "price": 40,
+    "feed":"clover",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "sheep2",
+    "count": 5,
+    "price": 40,
+    "feed":"clover",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "sheep3",
+    "count": 5,
+    "price": 40,
+    "feed":"clover",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "cow1",
+    "count": 9,
+    "price": 40,
     "feed": "corn, soy",
-    "user" : "5b4d0890a6b4fb75280719a9",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "cow2",
+    "count": 9,
+    "price": 40,
+    "feed": "corn, soy",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "goat1",
+    "count": 3,
+    "price": 40,
+    "feed": "wheat, corn, soy, clover",
+    "user": "5b4d0890a6b4fb75280719a9",
+    "manager": false
+  },
+  {
+    "type": "fish1",
+    "count": 6,
+    "price": 40,
+    "feed": "fishfood",
+    "user": "5b4d0890a6b4fb75280719a9",
     "manager": false
   }
 ]

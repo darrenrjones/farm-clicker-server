@@ -8,11 +8,20 @@ const userSchema = mongoose.Schema({
   username: { type: String, required: true, unique: true },
   cash: Number,
   password: { type: String, required: true },
-  cropTotals: {
+  inventory: {
     wheat: {type: Number, default: 0},
     corn: {type: Number, default: 0},
-    soy: {type: Number, default: 0}
-  }
+    soy: {type: Number, default: 0},
+    clover: {type: Number, default: 0},
+    fishfood: {type: Number, default: 0},
+    eggs: {type: Number, default: 0},
+    bacon: {type: Number, default: 0},
+    milk: {type: Number, default: 0},
+    wool: {type: Number, default: 0},
+    goatcheese: {type: Number, default: 0},
+    fishfillet: {type: Number, default: 0}
+  }, 
+  lastLogout: {type: Number, default: null}
 },
 {
   'toJSON':{ 
