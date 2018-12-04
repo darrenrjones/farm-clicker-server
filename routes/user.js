@@ -45,7 +45,8 @@ router.post('/register', (req, res, next) => {
         username,
         farmname,
         password: digest,
-        cash: 0
+        cash: 0,
+        careerCash: 0,
       };
       return User.create(newUser);
     })
@@ -88,7 +89,15 @@ router.put('/save/:id', jwtAuth, (req, res, next) => {
     return Animals.findByIdAndUpdate(newAnimal.id, { $set: { count: newAnimal.count, price: newAnimal.price, manager: newAnimal.manager } });
   });
 
-  User.findByIdAndUpdate(user.id, { $set: { cash: user.cash, inventory: user.inventory, lastLogout: user.lastLogout, farmname: user.farmname } })
+  User.findByIdAndUpdate(user.id, {
+    $set: {
+      cash: user.cash,
+      careerCash: user.careerCash,
+      inventory: user.inventory,
+      lastLogout: user.lastLogout,
+      farmname: user.farmname
+    }
+  })
     .then((results => {
       res.json(results);
     }))

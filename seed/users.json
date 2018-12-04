@@ -4,6 +4,7 @@
     "password": "password",
     "farmname": "farmDummy's Farm",
     "cash": 0,
+    "careerCash": 0,
     "crops": []
   },
   {
@@ -11,6 +12,7 @@
     "password": "password",
     "farmname": "farmSmartie's Farm",
     "cash": 10000,
+    "careerCash": 10000,
     "crops": []
   },
   {
@@ -18,6 +20,7 @@
     "password": "password",
     "farmname": "farmGod's Farm",
     "cash": 10000000,
+    "careerCash": 10000000,
     "crops": []
   }
 ]

@@ -7,6 +7,7 @@ const userSchema = mongoose.Schema({
   farmname: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   cash: Number,
+  careerCash: Number,
   password: { type: String, required: true },
   inventory: {
     wheat: {type: Number, default: 0},
