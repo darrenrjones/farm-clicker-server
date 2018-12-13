@@ -47,6 +47,7 @@ router.post('/register', (req, res, next) => {
         password: digest,
         cash: 0,
         careerCash: 0,
+        seenMessage: 0,
       };
       return User.create(newUser);
     })
@@ -95,7 +96,8 @@ router.put('/save/:id', jwtAuth, (req, res, next) => {
       careerCash: user.careerCash,
       inventory: user.inventory,
       lastLogout: user.lastLogout,
-      farmname: user.farmname
+      farmname: user.farmname,
+      seenMessage: user.seenMessage
     }
   })
     .then((results => {

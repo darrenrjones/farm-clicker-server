@@ -8,15 +8,15 @@ const Crops = require('../models/crops');
 router.use('/', passport.authenticate('jwt', { session: false, failWithError: true }));
 
 //get user crops
-router.get('/', (req,res,next) => {
-  console.log('get user crops entered from routes/crops.js')
-const user = req.user.id;
 
-  Crops.find({user})
-    .then(results => {
-      res.json(results);
-    });
-});
+// router.get('/', (req,res,next) => {
+// const user = req.user.id;
+
+//   Crops.find({user})
+//     .then(results => {
+//       res.json(results);
+//     });
+// });
 
 //purchase crop
 // router.post('/', (req,res,next) => {

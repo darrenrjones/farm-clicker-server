@@ -5,7 +5,8 @@
     "farmname": "farmDummy's Farm",
     "cash": 0,
     "careerCash": 0,
-    "crops": []
+    "crops": [],
+    "seenMessage": 0
   },
   {
     "username": "farmSmartie",
@@ -13,7 +14,8 @@
     "farmname": "farmSmartie's Farm",
     "cash": 10000,
     "careerCash": 10000,
-    "crops": []
+    "crops": [],
+    "seenMessage": 0
   },
   {
     "username": "farmGod",
@@ -21,6 +23,7 @@
     "farmname": "farmGod's Farm",
     "cash": 10000000,
     "careerCash": 10000000,
-    "crops": []
+    "crops": [],
+    "seenMessage": 0
   }
 ]

@@ -22,7 +22,8 @@ const userSchema = mongoose.Schema({
     goatcheese: {type: Number, default: 0},
     fishfillet: {type: Number, default: 0}
   }, 
-  lastLogout: {type: Number, default: null}
+  lastLogout: {type: Number, default: null},
+  seenMessage: 0
 },
 {
   'toJSON':{ 

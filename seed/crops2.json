@@ -1,14 +1,14 @@
 [
   {
     "type": "wheat1",
-    "count": 3,
+    "count": 1,
     "price": 5,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "wheat2",
-    "count": 3,
+    "count": 2,
     "price": 5,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
@@ -22,70 +22,70 @@
   },
   {
     "type": "corn1",
-    "count": 3,
+    "count": 4,
     "price": 10,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "corn2",
-    "count": 3,
+    "count": 5,
     "price": 10,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "corn3",
-    "count": 3,
+    "count": 6,
     "price": 10,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "soy1",
-    "count": 3,
+    "count": 7,
     "price": 15,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "soy2",
-    "count": 3,
+    "count": 8,
     "price": 15,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "soy3",
-    "count": 3,
+    "count": 9,
     "price": 15,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "clover1",
-    "count": 3,
+    "count": 8,
     "price": 15,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "clover2",
-    "count": 3,
+    "count": 7,
     "price": 15,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "clover3",
-    "count": 3,
+    "count": 6,
     "price": 15,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
   },
   {
     "type": "fishfood1",
-    "count": 3,
+    "count": 5,
     "price": 25,
     "user" : "5b4d0890a6b4fb75280719a9",
     "manager": false
